@@ -43,6 +43,7 @@ theorem sq_even_imp_dvd (n : ℤ) (h : 2 ∣ n ^ 2) : 2 ∣ n := by
 -- The equation a^2 = 2b^2 implies a is even (2 | a)
 theorem eq_imp_a_even (a b : ℤ) (h : a ^ 2 = 2 * b ^ 2) : 2 ∣ a := by
   have h1 : 2 ∣ a ^ 2 := by
+    dsimp[(·∣·)]
     use b ^ 2
     exact h
   exact sq_even_imp_dvd a h1
