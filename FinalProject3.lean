@@ -59,6 +59,7 @@ theorem eq_imp_b_even (a b : ℤ) (h : a ^ 2 = 2 * b ^ 2) : 2 ∣ b := by
     cancel 2 at h2
     exact h2.symm
   have h3 : 2 ∣ b ^ 2 := by
+    dsimp[(·∣·)]
     use j ^ 2
     exact h1
   exact sq_even_imp_dvd b h3
